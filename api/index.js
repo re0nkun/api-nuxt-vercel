@@ -17,6 +17,6 @@ app.get("/", function(req, res) {
 
 // module.exports = app
 module.exports = {
-  path: "/api/",
+  path: "/api",
   handler: app
 };
