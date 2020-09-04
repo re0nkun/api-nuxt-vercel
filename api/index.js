@@ -2,8 +2,10 @@ const express = require("express");
 // const axios = require('axios');
 const app = express();
 
-app.get("/", function(req, res) {
-  res.send("HelloWorld");
+app.get("/api", function(req, res) {
+  res.status(200).send({
+    message: 'Hello world!'
+  })
   // const api = req.query.api;
   // axios.get(`${api}`)
 
@@ -13,7 +15,8 @@ app.get("/", function(req, res) {
   //   });
 });
 
-module.exports = {
-path: "/api/",
-handler: app
-};
+module.exports = app
+// module.exports = {
+// path: "/api/",
+// handler: app
+// };
