@@ -70,7 +70,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -89,5 +89,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
+  // serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
+  // serverMiddleware: ['~~/api/']
+  // serverMiddleware: ['~~/api/index.js']
+  serverMiddleware: ['~/api/']
 }
