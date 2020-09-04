@@ -90,8 +90,8 @@ export default {
   */
   build: {
   },
-  serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
-  // serverMiddleware: ['~~/api/']
+  // serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
+  serverMiddleware: ['~~/api/']
   // serverMiddleware: ['~~/api/index.js']
   // serverMiddleware: ['~/api/']
 }

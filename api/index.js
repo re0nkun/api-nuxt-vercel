@@ -15,8 +15,8 @@ app.get("/", function(req, res) {
   //   });
 });
 
-module.exports = app
-// module.exports = {
-//   path: "/api",
-//   handler: app
-// };
+// module.exports = app
+module.exports = {
+  path: "/api",
+  handler: app
+};
