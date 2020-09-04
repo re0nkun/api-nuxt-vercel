@@ -5,7 +5,7 @@
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
       "config": {
-        "serverFiles": ["~/api/index.js"]
+        "serverFiles": ["api/index.js"]
       }
     }
   ]
