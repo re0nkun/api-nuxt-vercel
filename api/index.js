@@ -2,8 +2,7 @@ const express = require("express");
 // const axios = require('axios');
 const app = express();
 
-app.get("/", function(err,req, res) {
-  console.log(err)
+app.get("/", function(req, res) {
   res.send({
     message: 'Hello world!'
   })

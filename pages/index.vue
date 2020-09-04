@@ -1,6 +1,6 @@
 <template>
   <div>
-    hello
+    {{ lists }}
     <!-- <v-app-bar app>
       <v-toolbar-title>
         <span>Vuetify Pagination</span>
@@ -30,13 +30,11 @@
 <script>
 // import axios from 'axios'
 export default {
-  // async asyncData ({ $axios }) {
-  //   const lists = await $axios.$get(
-  //     'https://graph.facebook.com/v8.0/17841593698074073/recent_media?access_token=EAAEeA6V2QgwBAJvLF9hUj7gWXJt7ARZCMdg89JX316QUC8XyGJZBynUxZBHayhKqZBLgPdS1HURfVZBdeycfY37ahZA1J7z7lnlhqKiAZC1RyPOsaygZACOXKdLFwP6areZBzEmW68MGzvjI805Eg7WJSSBegDzV9LJARtSC8PXalFAZDZD&pretty=1&fields=id,permalink,timestamp&user_id=17841403161058462&limit=50'
-  //   )
+  async asyncData ({ $axios }) {
+    const lists = await $axios.$get('https://api-nuxt-vercel.vercel.app/api')
 
-  //   return { lists }
-  // },
+    return { lists }
+  }
   // data () {
   //   return {
   //     lists: [],
