@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ lists }}
+    hello
+    <!-- {{ lists }} -->
     <!-- <v-app-bar app>
       <v-toolbar-title>
         <span>Vuetify Pagination</span>
@@ -30,11 +31,12 @@
 <script>
 // import axios from 'axios'
 export default {
-  async asyncData ({ $axios }) {
-    const lists = await $axios.$get('https://api-nuxt-vercel.vercel.app/api')
+  // async asyncData ({ $axios }) {
+  //   const lists = await $axios.$get('https://api-nuxt-vercel.vercel.app/api')
 
-    return { lists }
-  }
+  //   return { lists }
+  // }
+
   // data () {
   //   return {
   //     lists: [],
