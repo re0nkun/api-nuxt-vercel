@@ -56,13 +56,24 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+  proxy: {
+    '/api/': {
+      target: 'https://api.twitter.com/2/tweets/search',
+      pathRewrite: {
+        '^/api/' : '/'
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    proxy: true
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -90,7 +101,7 @@ export default {
   */
   build: {
   },
-  serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
+  // serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
   // serverMiddleware: ['~~/api/']
   // serverMiddleware: ['~~/api/index.js']
   // serverMiddleware: ['~/api/']
