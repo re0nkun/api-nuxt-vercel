@@ -30,9 +30,9 @@
             >
               <tweetCard :tw="item" />
 
-              <span v-for="(h, i) in item.entities.hashtags" :key="i">
+              <!-- <span v-for="(h, i) in item.entities.hashtags" :key="i">
                 [{{ h.tag }}]
-              </span>
+              </span> -->
             </div>
           </div>
 

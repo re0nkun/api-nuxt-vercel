@@ -1,5 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
+require('dotenv').config()
+const { TOKEN } = process.env
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -15,6 +18,7 @@ export default {
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
+  env: { TOKEN },
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -50,6 +54,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/dotenv',
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
   ],
