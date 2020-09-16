@@ -37,6 +37,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/infiniteloading', ssr: false },
+    { src: '~/plugins/vue-masonry', ssr: false }
   ],
   /*
   ** Auto import components
@@ -60,19 +62,19 @@ export default {
     '@nuxtjs/proxy'
   ],
   proxy: {
-    '/api/': {
-      target: 'https://api.twitter.com/2/tweets/search',
-      pathRewrite: {
-        '^/api/' : '/'
-      }
-    }
+    // '/api/': {
+    //   target: 'https://api.twitter.com/2/tweets/search',
+    //   pathRewrite: {
+    //     '^/api/' : '/'
+    //   }
+    // }
   },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true
+    // proxy: true
   },
   /*
   ** vuetify module configuration
@@ -101,7 +103,7 @@ export default {
   */
   build: {
   },
-  // serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
+  serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }]
   // serverMiddleware: ['~~/api/']
   // serverMiddleware: ['~~/api/index.js']
   // serverMiddleware: ['~/api/']
