@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     infiniteHandler ($state) {
-      this.$axios.$get('https://api-nuxt-vercel-cx9pmgt48.vercel.app/api', {
+      this.$axios.$get('https://api-nuxt-vercel.vercel.app/api', {
         params: {
           hashtag: this.hashtag,
           next: this.next
