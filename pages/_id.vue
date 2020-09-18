@@ -11,9 +11,6 @@
       <v-select
         v-model="hashtag"
         :items="items"
-        item-text="txt"
-        item-value="val"
-        label="category"
         color="grey"
         @change="changeHashtag"
       />
@@ -36,7 +33,7 @@
             </div>
           </div>
 
-          <infinite-loading :identifier="infiniteId" @infinite="infiniteHandler" />
+          <infinite-loading @infinite="infiniteHandler" />
         </client-only>
       </v-container>
     </v-main>
@@ -51,14 +48,8 @@ export default {
   },
   data () {
     return {
-      items: [
-        { txt: '---', val: '' },
-        { txt: 'hakodate', val: 'hakodate' },
-        { txt: '北海道', val: '北海道' },
-        { txt: 'hokkaido', val: 'hokkaido' }
-      ],
-      hashtag: '',
-      infiniteId: +new Date(),
+      items: ['...', 'hakodate', '北海道', 'hokkaido'],
+      hashtag: this.$route.params.id,
       next: '',
       list: []
     }
@@ -70,9 +61,10 @@ export default {
   },
   methods: {
     infiniteHandler ($state) {
-      this.$axios.$get('https://api-nuxt-vercel.vercel.app/api', {
+      // this.$axios.$get('https://api-nuxt-vercel.vercel.app/api', {
+      this.$axios.$get('/api', {
         params: {
-          hashtag: this.hashtag,
+          hashtag: this.$route.params.id || '',
           next: this.next
         }
       }).then((res) => {
@@ -90,10 +82,16 @@ export default {
       })
     },
     changeHashtag () {
-      this.next = ''
-      this.list = []
-      this.infiniteId += 1
+      if (this.hashtag === '...') {
+        this.$router.push({ name: 'id' })
+      } else {
+        this.$router.push({ name: 'id', params: { id: this.hashtag } })
+      }
     }
+    // ,
+    // beforeRouteUpdate (to, from, next) {
+    //   next()
+    // }
   }
 }
 </script>
