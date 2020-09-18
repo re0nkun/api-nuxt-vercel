@@ -61,8 +61,8 @@ export default {
   },
   methods: {
     infiniteHandler ($state) {
-      // this.$axios.$get('https://api-nuxt-vercel.vercel.app/api', {
-      this.$axios.$get('/api', {
+      this.$axios.$get('https://api-nuxt-vercel.vercel.app/api', {
+      // this.$axios.$get('/api', {
         params: {
           hashtag: this.$route.params.id || '',
           next: this.next
